@@ -2,7 +2,6 @@
 
 require 'rubygems'
 require "rake/testtask"
-require 'rcov/rcovtask'
 require 'rake/gempackagetask'
 require 'rake/clean'
 $: << File.dirname(__FILE__)
@@ -27,12 +26,6 @@ end
 directory gemtask.package_dir
 
 CLEAN.include(gemtask.package_dir)
-
-desc "Analyze code coverage of the unit tests."
-Rcov::RcovTask.new do |t|
-  t.test_files = FileList[testglobs]
-  #t.verbose = true     # uncomment to see the executed command
-end
 
 desc "Test just the SQS interface"
 task :testsqs do

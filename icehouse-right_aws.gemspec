@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{icehouse-right_aws}
-  s.version = "1.11.0"
+  s.version = "2.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["RightScale, Inc."]
@@ -14,37 +14,9 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = [
     "README.txt"
   ]
-  s.files = [
-    "History.txt",
-     "Manifest.txt",
-     "README.txt",
-     "Rakefile",
-     "VERSION",
-     "lib/acf/right_acf_interface.rb",
-     "lib/acw/right_acw_interface.rb",
-     "lib/as/right_as_interface.rb",
-     "lib/awsbase/benchmark_fix.rb",
-     "lib/awsbase/right_awsbase.rb",
-     "lib/awsbase/support.rb",
-     "lib/ec2/right_ec2.rb",
-     "lib/ec2/right_ec2_ebs.rb",
-     "lib/ec2/right_ec2_images.rb",
-     "lib/ec2/right_ec2_instances.rb",
-     "lib/ec2/right_ec2_monitoring.rb",
-     "lib/ec2/right_ec2_reserved_instances.rb",
-     "lib/ec2/right_ec2_vpc.rb",
-     "lib/elb/right_elb_interface.rb",
-     "lib/rds/right_rds_interface.rb",
-     "lib/right_aws.rb",
-     "lib/s3/right_s3.rb",
-     "lib/s3/right_s3_interface.rb",
-     "lib/sdb/active_sdb.rb",
-     "lib/sdb/right_sdb_interface.rb",
-     "lib/sqs/right_sqs.rb",
-     "lib/sqs/right_sqs_gen2.rb",
-     "lib/sqs/right_sqs_gen2_interface.rb",
-     "lib/sqs/right_sqs_interface.rb"
-  ]
+
+  candidates = Dir.glob('{lib,test}/**/*') + ['History.txt', 'Manifest.txt', 'README.txt', 'Rakefile', 'right_aws.gemspec']
+  s.files = candidates.sort
   s.homepage = %q{http://github.com/icehouse/right_aws}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
@@ -86,4 +58,3 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<right_http_connection>, [">= 1.2.1"])
   end
 end
-
